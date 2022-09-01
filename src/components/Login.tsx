@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { Button, Col, Divider, Form, Input, message, Row } from 'antd';
+import { Button, Col, Divider, Form, Image, Input, message, Row } from 'antd';
 
 import { addUser, User } from '../features/userSlice';
 import { useAppDispatch } from '../store';
@@ -34,47 +34,51 @@ const Login: React.FC = () => {
     };
 
     return (
-        <Row style={{ height: '100vh' }} justify='space-evenly' align='middle' >
-            <Col span={7}>
-                <Divider orientation='left' style={{ fontFamily: 'sofia' }}> Welcome to Azza Cake House</Divider>
-                <Row align='middle' justify='end'>
-                    <Col span={24}><img style={{ width: '20rem', borderRadius: '15px' }} src="https://azza.az/wp-content/uploads/2020/06/cakehouse1-min.png" alt="Logo" /></Col>
+        <Row style={{ height: '100vh' }} justify='center' align='middle' >
+            <Divider orientation='center' style={{ fontFamily: 'sofia' }}> Welcome to Azza Cake House</Divider>
+            <Col xs={18} sm={12} md={6} lg={6} >
+                <Row justify='center'>
+                    <Image style={{ borderRadius: '8px' }}
+                        width={300}
+                        src="https://azza.az/wp-content/uploads/2020/06/cakehouse1-min.png"
+                    />
                 </Row>
-                <Divider></Divider>
             </Col>
-            <Col span={6}>
-                <Divider orientation='left'>Login:</Divider>
-                <Form
-                    name="basic"
-                    labelCol={{ span: 8 }}
-                    wrapperCol={{ span: 16 }}
-                    onFinish={onFinish}
-                    onFinishFailed={onFinishFailed}
-                    autoComplete="off"
-                >
-                    <Form.Item
-                        label="Name"
-                        name="name"
-                        rules={[{ required: true, message: 'Please input your name!' }]}
+            <Col xs={18} sm={12} md={6} lg={6} >
+                <Row justify='center'>
+                    <Divider orientation='center'>Login:</Divider>
+                    <Form
+                        name="basic"
+                        labelCol={{ span: 8 }}
+                        wrapperCol={{ span: 16 }}
+                        onFinish={onFinish}
+                        onFinishFailed={onFinishFailed}
+                        autoComplete="off"
                     >
-                        <Input />
-                    </Form.Item>
+                        <Form.Item
+                            label="Name"
+                            name="name"
+                            rules={[{ required: true, message: 'Please input your name!' }]}
+                        >
+                            <Input />
+                        </Form.Item>
 
-                    <Form.Item
-                        label="Password"
-                        name="password"
-                        rules={[{ required: true, message: 'Please input your password!' }]}
-                    >
-                        <Input.Password />
-                    </Form.Item>
+                        <Form.Item
+                            label="Password"
+                            name="password"
+                            rules={[{ required: true, message: 'Please input your password!' }]}
+                        >
+                            <Input.Password />
+                        </Form.Item>
 
-                    <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-                        <Button type="primary" htmlType="submit">Submit
-                        </Button>
-                    </Form.Item>
-                </Form>
-                <Divider></Divider>
+                        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+                            <Button type="primary" htmlType="submit">Submit
+                            </Button>
+                        </Form.Item>
+                    </Form>
+                </Row>
             </Col>
+            <Divider></Divider>
         </Row>
     );
 };

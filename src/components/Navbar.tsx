@@ -1,4 +1,4 @@
-import { FacebookOutlined, InstagramOutlined, ShoppingOutlined, TwitterOutlined, UserOutlined } from '@ant-design/icons';
+import { FacebookOutlined, InstagramOutlined, ShoppingOutlined, TwitterOutlined, UserOutlined, BgColorsOutlined } from '@ant-design/icons';
 import { message } from 'antd';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -8,7 +8,7 @@ const NavBar = () => {
     const navigate = useNavigate();
     const [color, setColor] = useState('');
     const body = document.querySelector('body') as HTMLElement;
-    
+
     const ChooseColor = (e: any) => { // Set Body Color
         setColor(e.target.value);
         body.style.backgroundColor = color
@@ -42,11 +42,18 @@ const NavBar = () => {
                 {
                     productData.map((item) => (<li key={item.label}><Link to={item.to}>{item.label}</Link></li>))
                 }
-                <li style={{ position: 'absolute', left: '50%', top: '0' }}> <a href="#"><input className='color btn btn-warning' type="color" value='#50213A' onChange={(e) => ChooseColor(e)} />Choose Color</a>  </li>
+
                 <li><Link to='/' onClick={() => { localStorage.clear(); message.warn('logged out') }}> {localStorage.getItem('user' || 'admin') ? 'Log Out' : 'Log In'}<UserOutlined /></Link></li>
             </ul>
-            <div className='card' onClick={() => navigate('/orders')}>
-                {orderCount} <br /><ShoppingOutlined />
+            <div className="fixedDiv">
+                <div className="color">
+                    <label htmlFor="colorChoose"><BgColorsOutlined />Color</label>
+                    <input id='colorChoose' className='color btn btn-warning' type="color" value='#50213A' onChange={(e) => ChooseColor(e)} />
+                </div>
+
+                <div className='card' onClick={() => navigate('/orders')}>
+                    {orderCount} <br /><ShoppingOutlined />
+                </div>
             </div>
             <div className="social">
                 <ul>
