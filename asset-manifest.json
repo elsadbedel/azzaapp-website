@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/azzaapp-website/static/css/main.0f1d13aa.css",
-    "main.js": "/azzaapp-website/static/js/main.d3520aea.js",
+    "main.css": "/azzaapp-website/static/css/main.ed3ca2b3.css",
+    "main.js": "/azzaapp-website/static/js/main.0c2386bc.js",
     "index.html": "/azzaapp-website/index.html",
-    "main.0f1d13aa.css.map": "/azzaapp-website/static/css/main.0f1d13aa.css.map",
-    "main.d3520aea.js.map": "/azzaapp-website/static/js/main.d3520aea.js.map"
+    "main.ed3ca2b3.css.map": "/azzaapp-website/static/css/main.ed3ca2b3.css.map",
+    "main.0c2386bc.js.map": "/azzaapp-website/static/js/main.0c2386bc.js.map"
   },
   "entrypoints": [
-    "static/css/main.0f1d13aa.css",
-    "static/js/main.d3520aea.js"
+    "static/css/main.ed3ca2b3.css",
+    "static/js/main.0c2386bc.js"
   ]
 }
